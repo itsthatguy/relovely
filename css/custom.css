@@ -12,7 +12,7 @@ body {
   padding: 0;
 }
 
-a, a:visited {
+a, a:visited, a:hover {
   color: #fc1774;
 }
 
