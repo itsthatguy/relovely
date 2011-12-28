@@ -3,7 +3,7 @@ _______________________________
 Desktop version layout - place your custom code here */
 
 body {
-  background-color: #f3f3f3;
+  background-color: #fcfbfa;
   background-image: url('../images/main_background.png');
   color: #222;
   font-family: 'QuicksandBook', Arial, sans-serif;
@@ -13,11 +13,11 @@ body {
 }
 
 a, a:visited {
-  color: #3aa;
+  color: #fc1774;
 }
 
 a:hover {
-  color: #ea6900;
+  text-decoration: underline;
 }
 
 
@@ -60,7 +60,6 @@ My Stuff */
 .main_col {
   border-right: 1px dotted #999;
   margin-bottom: 20px;
-  padding-top: 10px;
   padding-left: 20px;
   padding-right: 40px;
   padding-bottom: 10px;
@@ -70,11 +69,10 @@ My Stuff */
 }
 
 .nav_col a {
-  color: #399;
 }
 
 .nav_col a:hover {
-  color: #ea6900;
+  color: #fc1774;
 }
 
 .nav_col .title {
@@ -105,6 +103,10 @@ BLOG ENTRY */
   padding-bottom: 40px;
 }
 
+.blog_entry:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
 
 .blog_entry .title {
   font-family: 'QuicksandBook', Helvetica, sans-serif;
@@ -114,8 +116,8 @@ BLOG ENTRY */
 }
 
 .blog_entry .date {
-  color: #adb1b3;
-  font-family: 'MisoRegular', Helvetica, sans-serif;
+  color: #999;
+  font-family: 'MisoLight', Helvetica, sans-serif;
   font-size: 1em;
   line-height: .8em;
   text-transform: uppercase;
@@ -152,7 +154,6 @@ FOOTER */
 
   height: 200px;
   margin-top: 40px;
-  width: 100%;
 }
 
 .footer .row {
