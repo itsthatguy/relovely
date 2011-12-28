@@ -13,7 +13,7 @@ body {
 }
 
 a, a:visited {
-  color: #99cccc;
+  color: #3aa;
 }
 
 a:hover {
@@ -58,11 +58,11 @@ My Stuff */
   line-height: 500px;
 }
 .main_col {
-  background-color: #fefefe;
+  border-right: 1px dotted #999;
   margin-bottom: 20px;
   padding-top: 10px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 40px;
   padding-bottom: 10px;
 }
 
@@ -78,12 +78,16 @@ My Stuff */
 }
 
 .nav_col .title {
-  font-size: 1.1em;
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
 .nav_col ul, .nav_col li {
-  list-style: none;
   font-size: 1em;
+  line-height: 1.4em;
+  list-style: none;
+  margin-left: 0;
+  text-indent: 0;
 }
 
 .nav_col ul li:before {
@@ -110,7 +114,7 @@ BLOG ENTRY */
 }
 
 .blog_entry .date {
-  color: #ccd1d3;
+  color: #adb1b3;
   font-family: 'MisoRegular', Helvetica, sans-serif;
   font-size: 1em;
   line-height: .8em;
