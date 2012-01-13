@@ -8,10 +8,10 @@ body {
   color: #222;
   font-family: 'QuicksandBook', Arial, sans-serif;
   font-size: .8em;
-  line-height: 2.0em;
+  line-height: 1.8em;
   padding: 0;
 }
-
+/*fc1774*/
 a, a:visited, a:hover {
   color: #fc1774;
 }
@@ -19,7 +19,6 @@ a, a:visited, a:hover {
 a:hover {
   text-decoration: underline;
 }
-
 
 /*
 _______________________________
@@ -30,15 +29,18 @@ Mobile version - preset code from cssgrid.net */
   .examplecontainer {}
 
   body {}
-  
-}
 
+  .nav_col {
+
+  }
+
+}
 
 /*
 _______________________________
 Provide higher res assets for iPhone 4 - preset code from cssgrid.net */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
 
   /* An example of how to override an image with one twice the size for iPhone 4. Specify the original pixel size with background-size.
   .download {
@@ -51,36 +53,63 @@ Provide higher res assets for iPhone 4 - preset code from cssgrid.net */
 
 /*
 _______________________________
-My Stuff */
+Relovely Stuff */
 
-.header h1 {
-  height: 210px;
-  line-height: 500px;
+.header {
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
+.header h1 {
+  height: 150px;
+  line-height: 400px;
+}
+
+.header img {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  background-image: url("../images/horizontal_rule.png");
+  background-position: left top;
+  background-repeat: repeat-x;
+  padding-top: 20px;
+}
+
 .main_col {
-  border-right: 1px dotted #999;
+  background-image: url("../images/vertical_rule.png");
+  background-position: right top;
+  background-repeat: repeat-y;
   margin-bottom: 20px;
-  padding-left: 20px;
   padding-right: 40px;
   padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+nav {
+  margin: 0 auto;
+  max-width: 960px;
+  position: fixed;
+  width: 100%;
 }
 
 .nav_col {
+  display: block;
+  padding-left: 82.7%;
 }
 
 .nav_col a {
+  font-family: 'CaviarDreamsRegular', Helvetica, sans-serif;
+  padding: 4px;
 }
 
-.nav_col a:hover {
-  color: #fc1774;
+.nav_col ul.navigation a:hover {
+  background-color: #edf9f7;
+  color: #222;
+  text-decoration: none;
 }
 
-.nav_col .title {
-  font-size: 1em;
-  text-transform: uppercase;
-}
-
-.nav_col ul, .nav_col li {
+.nav_col ul.navigation, .nav_col ul.navigation li {
   font-size: 1em;
   line-height: 1.4em;
   list-style: none;
@@ -88,20 +117,62 @@ My Stuff */
   text-indent: 0;
 }
 
-.nav_col ul li:before {
-	content: "\00B7 \00B7 \0020";
+.nav_col ul.navigation li:before {
+  content: "\0020";
+}
+
+.nav_col ul.social_icons, .nav_col ul.social_icons li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_col ul.social_icons li a {
+  background-image: url("../images/social_icons.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  line-height: 900px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.nav_col ul.social_icons li.pinterest a {
+  background-position: 0 0;
+}
+.nav_col ul.social_icons li.twitter a {
+  background-position: -30px 0;
+}
+.nav_col ul.social_icons li.flickr a {
+  background-position: -60px 0;
+}
+
+.nav_col ul.social_icons li.pinterest a:hover {
+  background-position: 0 -30px;
+}
+.nav_col ul.social_icons li.twitter a:hover {
+  background-position: -30px -30px;
+}
+.nav_col ul.social_icons li.flickr a:hover {
+  background-position: -60px -30px;
 }
 
 /*
 _______________________________
 BLOG ENTRY */
 .blog_entry {
-  border-bottom: 1px dotted #999;
+  background-image: url("../images/horizontal_rule.png");
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  display: block;
   margin-bottom: 20px;
   margin-top: 10px;
   padding: 10px;
   padding-bottom: 40px;
 }
+
 
 .blog_entry:first-child {
   margin-top: 0;
@@ -109,23 +180,47 @@ BLOG ENTRY */
 }
 
 .blog_entry .title {
-  font-family: 'QuicksandBook', Helvetica, sans-serif;
-  font-size: 2.6em;
-  line-height: 1.1em;
+  font-family: 'CaviarDreamsBold', Helvetica, sans-serif;
+  font-size: 2.0em;
+  line-height: 1.3em;
   text-transform: uppercase;
 }
 
 .blog_entry .date {
-  color: #999;
-  font-family: 'MisoLight', Helvetica, sans-serif;
-  font-size: 1em;
-  line-height: .8em;
+  background-image: url("../images/date_background.png");
+  background-repeat: no-repeat;
+  color: #777f70;
+  font-family: 'CaviarDreamsBold', Helvetica, sans-serif;
+  font-size: .8em;
+  margin-right: 20px;
+  padding: 10px;
+  text-align: center;
   text-transform: uppercase;
+  height: 60px;
+  width: 40px;
+}
+
+.month {
+  font-size: 1.4em;
+  line-height: .7em;
+}
+
+.day {
+  font-family: 'CaviarDreamsRegular', Helvetica, sans-serif;
+  font-size: 2em;
+  line-height: 1.1em;
+}
+
+.year {
+  font-size: 1em;
+  line-height: .5em;
 }
 
 .blog_entry .tags {
   font-family: 'MisoRegular', Helvetica, sans-serif;
   font-size: 1em;
+  line-height: 1.8em;
+  padding-top: 20px;
   text-transform: uppercase;
 }
 
@@ -133,6 +228,11 @@ BLOG ENTRY */
 _______________________________
 PAGINATOR */
 .paginator {
+  background-image: url("../images/horizontal_rule.png");
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  padding-bottom: 20px;
+  padding-left: 10px;
 }
 
 .paginator ul, .paginator li {
@@ -159,16 +259,6 @@ FOOTER */
 .footer .row {
   padding: 20px;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -303,4 +393,61 @@ FOOTER */
 
 }
 
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'CaviarDreamsItalic';
+    src: url('fonts/CaviarDreamsItalic-webfont.eot');
+    src: url('fonts/CaviarDreamsItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/CaviarDreamsItalic-webfont.woff') format('woff'),
+         url('fonts/CaviarDreamsItalic-webfont.ttf') format('truetype'),
+         url('fonts/CaviarDreamsItalic-webfont.svg#CaviarDreamsItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CaviarDreamsBoldItalic';
+    src: url('fonts/CaviarDreams_BoldItalic-webfont.eot');
+    src: url('fonts/CaviarDreams_BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/CaviarDreams_BoldItalic-webfont.woff') format('woff'),
+         url('fonts/CaviarDreams_BoldItalic-webfont.ttf') format('truetype'),
+         url('fonts/CaviarDreams_BoldItalic-webfont.svg#CaviarDreamsBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CaviarDreamsRegular';
+    src: url('fonts/CaviarDreams-webfont.eot');
+    src: url('fonts/CaviarDreams-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/CaviarDreams-webfont.woff') format('woff'),
+         url('fonts/CaviarDreams-webfont.ttf') format('truetype'),
+         url('fonts/CaviarDreams-webfont.svg#CaviarDreamsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CaviarDreamsBold';
+    src: url('fonts/CaviarDreams_Bold-webfont.eot');
+    src: url('fonts/CaviarDreams_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/CaviarDreams_Bold-webfont.woff') format('woff'),
+         url('fonts/CaviarDreams_Bold-webfont.ttf') format('truetype'),
+         url('fonts/CaviarDreams_Bold-webfont.svg#CaviarDreamsBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
