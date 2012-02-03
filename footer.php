@@ -12,9 +12,11 @@
 ?>
   <footer class="container_12">
     <div>
+       
        Blog Design: Kevin Altman, <a href="http://twitter.com/itg">@itg</a>
        Buffalo Drawing in header <a href="http://exinyan.wordpress.com/2008/10/31/catherine-ledners-animal-house-buffalo/">Xin Yan</a> 
        Bear Drawing in header <a href="http://www.art-made-easy.com/animals-in-pen.html">Art Made Easy</a>
+       
     </div>
   </footer>
   
