@@ -1,36 +1,9 @@
 <!doctype html>
-<!--[if lt IE 7 ]> <html lang="en-us" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en-us" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en-us" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en-us" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
-
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
   <meta charset="utf-8">
-
   <title>relovely</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Fixes for IE -->
-  <!--[if lt IE 9]>
-      <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
-  <![endif]-->
-
-<!-- use "fixed-984px-ie.css" or "fixed-960px-ie.css for a 984px or 960px fixed width for IE6 and 7 -->
-  <!--[if lte IE 7]>
-    <link rel="stylesheet" href="css/fixed-984px-ie.css" type="text/css" media="screen" />
-  <![endif]-->
-
-<!-- Fixes for IE6, only needed if IE 6 will be supported - width must match 984px or 960px of css file used above -->
-<!-- Use .imagescale to fix IE6 issues with full-column width images (class must be added to any image wider than the column it is placed into) -->
-  <!--[if lte IE 6]>
-    <link rel="stylesheet" href="css/ie6-984px.css" type="text/css" media="screen" />
-  <![endif]-->
-<!-- End fixes for IE -->
-
-<!-- Customizations here -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/960_12_col.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/custom.css" type="text/css" media="screen" />
@@ -38,20 +11,37 @@
     <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
       
-      var nav = $(".nav_col");
-      var navbar = $("nav.inline .nav_col");
-      
-      console.log(navbar)
+      var nav = $("nav .nav_col");
+      var nav_sidebar = $("nav.sidebar .nav_col");
+      var nav_inline = $("nav.inline .nav_col");
       
       $(document).scroll(function(e) {
         
-        if($(this).scrollTop() > $(".header").height()) {
+        
+        
+        if($(this).scrollTop() > $("header").height()) {
             nav.css({"position" : "fixed", "top" : "0"});
-            navbar.addClass("toolbar");
+            nav_inline.addClass("toolbar");
+            if ($("nav.inline").css("display") != "none") {
+              $(".main_col").css("paddingTop", "65px");
+            } else {
+              nav_sidebar.css("paddingTop", "20px")
+            }
         } else {
             nav.css("position", "relative");
-            navbar.removeClass("toolbar");
+            nav_inline.removeClass("toolbar");
+            if ($("nav.inline").css("display") != "none") {
+              $(".main_col").css("paddingTop", "20px");
+            } else {
+              nav_sidebar.css("paddingTop", 0)
+            }
         }
+        
+        $(window).resize(function(e) {
+          if ($("nav.inline").css("display") != "none") {
+            $(".main_col").css("paddingTop", "20px");
+          }
+        })
         
       })
     });
@@ -61,9 +51,9 @@
 <body>
 
 <div class="wrapper">
-  <div class="header container_12 selfclear">
+  <header class="container_12 selfclear">
     <img src="images/title.png" alt="relovely">
-  </div>
+  </header>
   
   <!-- Navigation Start // -->
   <nav class="inline">
@@ -74,21 +64,15 @@
         <li><a href="#3">Daily Reads</a></li>
         <li><a href="#4">Contact</a></li>
       </ul>
-
-      <ul class="social_icons">
-        <li class="pinterest"><a href="http://pinterest.com/lynngrogan">pinterest</a></li>
-        <li class="twitter"><a href="#">twitter</a></li>
-        <li class="flickr"><a href="#">flickr</a></li>
-      </ul>
     </div><!-- /navigation -->
   </nav>
   
-    <div class="page container_12">
+    <section class="page container_12">
 
       <div class="main_col grid_10">
 
 <!-- Blog Entry Start // -->
-        <div class="blog_entry selfclear">
+        <article class="blog_entry selfclear">
           <div class="date grid_1">
             <div class="month">Dec</div>
             <div class="day">25</div>
@@ -99,9 +83,9 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel nulla ac eros tempor lobortis non non leo. Mauris adipiscing aliquam dictum. Pellentesque posuere gravida nulla, eget laoreet lectus placerat non. Mauris id arcu ipsum. Ut ac felis sed mi pellentesque pharetra id at velit. Nullam molestie semper felis sit amet gravida. Phasellus suscipit tortor sit amet eros porta sodales. Donec sit amet metus elit, quis dignissim sem. Quisque feugiat mollis convallis. Morbi tincidunt tristique nibh, iaculis aliquam enim iaculis a. Proin ornare nibh at eros commodo aliquam.
             <div class="tags"><a href="#">Stuff</a>, <a href="#">Things</a>, <a href="#">Tweeter</a></div>
           </div> <!-- /blog_entry_body -->
-        </div> <!-- /blog_entry -->
+        </article> <!-- /blog_entry -->
         
-        <div class="blog_entry selfclear">
+        <article class="blog_entry selfclear">
           <div class="date grid_1">
             <div class="month">Dec</div>
             <div class="day">25</div>
@@ -112,9 +96,9 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel nulla ac eros tempor lobortis non non leo. Mauris adipiscing aliquam dictum. Pellentesque posuere gravida nulla, eget laoreet lectus placerat non. Mauris id arcu ipsum. Ut ac felis sed mi pellentesque pharetra id at velit. Nullam molestie semper felis sit amet gravida. Phasellus suscipit tortor sit amet eros porta sodales. Donec sit amet metus elit, quis dignissim sem. Quisque feugiat mollis convallis. Morbi tincidunt tristique nibh, iaculis aliquam enim iaculis a. Proin ornare nibh at eros commodo aliquam.
             <div class="tags"><a href="#">Stuff</a>, <a href="#">Things</a>, <a href="#">Tweeter</a></div>
           </div> <!-- /blog_entry_body -->
-        </div> <!-- /blog_entry -->
+        </article> <!-- /blog_entry -->
         
-        <div class="blog_entry selfclear">
+        <article class="blog_entry selfclear">
           <div class="date grid_1">
             <div class="month">Dec</div>
             <div class="day">25</div>
@@ -125,7 +109,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel nulla ac eros tempor lobortis non non leo. Mauris adipiscing aliquam dictum. Pellentesque posuere gravida nulla, eget laoreet lectus placerat non. Mauris id arcu ipsum. Ut ac felis sed mi pellentesque pharetra id at velit. Nullam molestie semper felis sit amet gravida. Phasellus suscipit tortor sit amet eros porta sodales. Donec sit amet metus elit, quis dignissim sem. Quisque feugiat mollis convallis. Morbi tincidunt tristique nibh, iaculis aliquam enim iaculis a. Proin ornare nibh at eros commodo aliquam.
             <div class="tags"><a href="#">Stuff</a>, <a href="#">Things</a>, <a href="#">Tweeter</a></div>
           </div> <!-- /blog_entry_body -->
-        </div> <!-- /blog_entry -->
+        </article> <!-- /blog_entry -->
 
 <!-- Paginator Start // -->
         <div class="paginator">
@@ -164,14 +148,15 @@
         </div><!-- /navigation -->
       </nav>
 
-  </div>
-</div> <!-- /container -->
-
-<div class="wrapper">
-  <div class="row">
-    <div class="footer container_12">&copy; Footer 2011</div>
-  </div>
-</div> <!-- /container -->
+  </section>
+  
+  <footer class="container_12">
+    <div>
+      &copy; Footer 2011
+    </div>
+  </footer>
+  
+</div> <!-- /wrapper -->
 
 
 </body>
