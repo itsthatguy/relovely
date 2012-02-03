@@ -49,6 +49,11 @@ Provide higher res assets for iPhone 4 - preset code from cssgrid.net */
 _______________________________
 Relovely Stuff */
 
+.blog_entry_body img {
+  float: left;
+  padding: 12px 20px 12px 0;
+}
+
 .wrapper {
   margin: 0 auto;
   width: 960px;

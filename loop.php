@@ -31,7 +31,7 @@
       <div class="year"><?php the_time('Y') ?></div>
     </div>
     <div class="blog_entry_body grid_8">
-      <div class="title"><?php the_title(); ?></div>
+      <div class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
       <?php the_content(); ?>
       <div class="tags"><?php the_category(', '); ?></div>
     </div> <!-- /blog_entry_body -->
